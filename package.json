@@ -1,0 +1,38 @@
+{
+  "name": "bowdencore",
+  "version": "1.0.0",
+  "description": "Enterprise MSP marketing website with Neuralink-inspired design",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000 --directory . || npx http-server",
+    "start": "npm run dev",
+    "build": "echo 'No build step required - pure HTML/CSS/JS'",
+    "test": "echo 'Add testing framework as needed'",
+    "lint": "echo 'Add linting tools (stylelint, eslint) as needed'",
+    "deploy": "git push origin main"
+  },
+  "keywords": [
+    "MSP",
+    "managed-services",
+    "cybersecurity",
+    "infrastructure",
+    "landing-page",
+    "neuralink",
+    "minimalist",
+    "orlando"
+  ],
+  "author": "BowdenCore Development Team",
+  "license": "Proprietary",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/bowdencore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/bowdencore/issues"
+  },
+  "homepage": "https://bowdencore.com",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
