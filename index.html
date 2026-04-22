@@ -2,78 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bowden Core | The Future of Networking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform | Bowden Core</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
-        <a href="index.html" class="logo">BOWDEN CORE</a>
-        <nav class="nav-links">
+    <header class="main-nav">
+        <a href="index.html" class="brand-logo">BOWDEN CORE</a>
+        <div class="nav-links">
             <a href="platform.html">Platform</a>
             <a href="network.html">Network</a>
             <a href="contact.html">Contact</a>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section id="hero">
-            <span class="tech-label">Orlando, FL // MSP</span>
-            <h1 class="hero-h1">Breakthrough <br> <span style="color: #444;">Infrastructure for Business</span></h1>
-            <p class="sub-text">We are building high-performance, invisible networks that allow dental and financial firms to scale without friction.</p>
+        <section class="hero-section">
+            <div class="content-wrapper">
+                <span class="label">Engineering</span>
+                <h1 class="reveal-text">The Core <br><span class="muted">Architecture.</span></h1>
+                <p class="hero-subtext">We build zero-trust environments designed for absolute continuity. Our platform integrates physical hardware with intelligent monitoring to create a seamless operational flow.</p>
+            </div>
         </section>
 
-        <section id="tech-stack">
-            <div class="tech-card">
-                <span class="tech-label">The Core Stack</span>
-                <h2>Ubiquiti Ecosystem</h2>
-                <p class="sub-text">Fully implanting UDMs and WAPs into your office for a cosmetically invisible, high-speed connection.</p>
+        <section class="product-section">
+            <div class="content-wrapper">
+                <div class="product-info">
+                    <span class="label">01 // Hardware</span>
+                    <h2>Invisible Integration</h2>
+                    <p>Standardized deployments utilizing high-density fiber optics and low-latency switching. Our installs are engineered to be cosmetically invisible and functionally immortal.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="tech-card">
-                <span class="tech-label">Active Defense</span>
-                <h2>Huntress & NinjaOne</h2>
-                <p class="sub-text">Continuous monitoring and automated remediation. We detect action potentials in your network before they become threats.</p>
+        <section class="product-section dark">
+            <div class="content-wrapper">
+                <div class="product-info">
+                    <span class="label">02 // Software</span>
+                    <h2>Autonomous Oversight</h2>
+                    <p>A proprietary oversight layer that monitors every action potential within the network. Automated remediation ensures that anomalies are neutralized before they become outages.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-                <li><a href="platform.html">Technology</a></li>
-                <li><a href="network.html">Network</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="mailto:info@bowdencore.com">Email Now</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <p>© Bowden Core 2026</p>
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <span>&copy; Bowden Core 2026</span>
         </div>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 1s cubic-bezier(0.19, 1, 0.22, 1)';
-            observer.observe(section);
-        });
-    </script>
 </body>
 </html>
