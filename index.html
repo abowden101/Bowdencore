@@ -1,554 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BowdenCore | Orlando MSP & IT SaaS</title>
-    <meta name="description" content="Orlando's Premier Managed Service Provider and IT SaaS company. Secure, reliable, local IT support with our proprietary monitoring and ticketing platform.">
+    <title>Bowden Core | Scaling Digital Infrastructure</title>
+    <meta name="description" content="Bowden Core provides expert software architecture and development services for high-growth startups.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
-        
-        :root {
-            --primary: #003087;
-            --accent: #FF6600;
-        }
-        
-        .dark {
-            --primary: #60a5fa;
-        }
-        
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        
-        .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .hero-bg {
-            background: linear-gradient(135deg, #003087 0%, #001f5c 100%);
-        }
-
-        .nav-link {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover {
-            color: #FF6600;
-            transform: translateY(-2px);
-        }
-
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .service-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgb(0 48 135 / 0.25);
-        }
-
-        .dashboard-metric {
-            transition: all 0.6s ease;
-        }
-
-        .carousel-slide {
-            transition: all 0.5s ease;
-        }
-    </style>
 </head>
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
-    <!-- NAVBAR -->
-    <nav class="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 bg-[#003087] dark:bg-blue-500 rounded-2xl flex items-center justify-center text-white text-xl font-bold">B</div>
-                    <div>
-                        <span class="heading-font text-2xl font-semibold tracking-tight">BowdenCore</span>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="platform.html" class="nav-link">Platform</a>
-                    <a href="why-us.html" class="nav-link">Why Us</a>
-                    <a href="resources.html" class="nav-link">Resources</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-                <div class="flex items-center gap-4">
-                    <button onclick="toggleDarkMode()" class="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-                        <i class="fa-solid fa-moon text-xl" id="theme-icon"></i>
-                    </button>
-                    <button onclick="showAssessmentModal()" 
-                            class="bg-[#FF6600] hover:bg-orange-600 text-white px-6 py-2.5 rounded-2xl text-sm font-semibold transition-all active:scale-95">
-                        Free Assessment
-                    </button>
-                </div>
-            </div>
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter">BOWDEN CORE</div>
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+            <a href="#services" class="hover:text-blue-600 transition">Services</a>
+            <a href="#stack" class="hover:text-blue-600 transition">Tech Stack</a>
+            <a href="mailto:your-email@example.com" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg hover:bg-blue-600 transition">Get a Consultation</a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section id="home" class="hero-bg text-white min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(at_top_right,#FF660020_0%,transparent_50%)]"></div>
-        <div class="max-w-7xl mx-auto px-6 pt-20 pb-16 relative z-10">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6">
-                    <div class="w-2 h-2 bg-[#FF6600] rounded-full animate-pulse"></div>
-                    ORLANDO, FLORIDA
-                </div>
-                
-                <h1 class="heading-font text-6xl md:text-7xl font-semibold leading-none tracking-tighter mb-6">
-                    Orlando’s Trusted MSP & IT SaaS Partner
-                </h1>
-                
-                <p class="text-xl text-white/80 mb-10 max-w-lg">
-                    24/7 Support Across Central Florida. Managed IT services, cybersecurity, and our proprietary SaaS platform keeping Orlando, Winter Park, Lake Mary, Maitland, and Kissimmee businesses secure and productive.
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <button onclick="smoothScrollTo('platform')" 
-                            class="bg-white text-[#003087] px-8 py-4 rounded-3xl font-semibold flex items-center gap-3 hover:shadow-2xl transition-all">
-                        See Our Platform
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                    <button onclick="showAssessmentModal()" 
-                            class="border border-white/60 hover:bg-white/10 px-8 py-4 rounded-3xl font-semibold transition-all">
-                        Get Free IT Assessment
-                    </button>
-                </div>
-                
-                <div class="mt-16 flex items-center gap-8 text-sm">
-                    <div class="flex -space-x-4">
-                        <div class="w-8 h-8 bg-white/20 backdrop-blur rounded-2xl border-2 border-white flex items-center justify-center text-xs">🏢</div>
-                        <div class="w-8 h-8 bg-white/20 backdrop-blur rounded-2xl border-2 border-white flex items-center justify-center text-xs">🏥</div>
-                        <div class="w-8 h-8 bg-white/20 backdrop-blur rounded-2xl border-2 border-white flex items-center justify-center text-xs">🏨</div>
-                    </div>
-                    <div class="text-white/70 text-sm">
-                        Trusted by 180+ Central Florida organizations
-                    </div>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <header class="max-w-5xl mx-auto px-6 pt-20 pb-32 text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest mb-6">Available for Projects</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+            We build the backbone of <br><span class="text-blue-600">modern digital startups.</span>
+        </h1>
+        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            From MVP architecture to enterprise-grade scalability. We translate complex business logic into clean, performant, and secure code.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:your-email@example.com" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition">Book a Technical Audit</a>
+            <a href="#services" class="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-slate-300 transition">View Our Process</a>
         </div>
-        
-        <!-- Floating CTA -->
-        <div onclick="showAssessmentModal()" 
-             class="fixed bottom-8 right-8 bg-[#FF6600] text-white px-6 py-4 rounded-3xl shadow-2xl flex items-center gap-3 cursor-pointer hover:scale-105 transition-all z-50">
-            <i class="fa-solid fa-clipboard-check"></i>
-            <span class="font-semibold">Free IT Assessment</span>
-        </div>
-    </section>
+    </header>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-24 bg-white dark:bg-zinc-900">
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="text-[#FF6600] font-semibold tracking-widest text-sm mb-3">EST. 2018 • ORLANDO, FL</div>
-                    <h2 class="heading-font text-5xl font-semibold tracking-tight mb-6">Local Expertise.<br>Enterprise Results.</h2>
-                    <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                        BowdenCore is a Central Florida-based Managed Service Provider and SaaS company. We combine white-glove local support with a powerful proprietary platform that thousands of devices trust every day.
-                    </p>
-                    <div class="mt-10 grid grid-cols-3 gap-8">
-                        <div>
-                            <div class="text-4xl font-bold text-[#003087] dark:text-blue-400">180+</div>
-                            <div class="text-sm text-zinc-500">Clients Protected</div>
-                        </div>
-                        <div>
-                            <div class="text-4xl font-bold text-[#003087] dark:text-blue-400">24/7</div>
-                            <div class="text-sm text-zinc-500">Local Support</div>
-                        </div>
-                        <div>
-                            <div class="text-4xl font-bold text-[#003087] dark:text-blue-400">4.98</div>
-                            <div class="text-sm text-zinc-500">Average Rating</div>
-                        </div>
-                    </div>
+            <h2 class="text-4xl font-bold text-center mb-16">Core Competencies</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6"></div>
+                    <h3 class="text-xl font-bold mb-3">MVP Development</h3>
+                    <p class="text-slate-600 leading-relaxed">Rapidly turn your vision into a functional, investor-ready product with our streamlined development roadmap.</p>
                 </div>
-                <div class="bg-zinc-100 dark:bg-zinc-800 rounded-3xl p-8 aspect-video flex items-center justify-center text-6xl">
-                    🏛️
+                <!-- Card 2 -->
+                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6"></div>
+                    <h3 class="text-xl font-bold mb-3">System Scaling</h3>
+                    <p class="text-slate-600 leading-relaxed">Refactoring and infrastructure optimization to handle high traffic loads without compromising performance.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6"></div>
+                    <h3 class="text-xl font-bold mb-3">Code Audits</h3>
+                    <p class="text-slate-600 leading-relaxed">Identify bottlenecks, security risks, and technical debt in your existing codebase before they impact your growth.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-24 bg-zinc-100 dark:bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="heading-font text-5xl font-semibold tracking-tight mb-4">Our Core Services</h2>
-                <p class="text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">From reactive support to proactive strategy, we've got your IT covered.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8" id="service-cards">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- PLATFORM -->
-    <section id="platform" class="py-24 bg-white dark:bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="inline px-4 py-2 bg-orange-100 dark:bg-orange-900 text-[#FF6600] text-sm font-semibold rounded-full">OUR SAAS PLATFORM</div>
-                <h2 class="heading-font text-5xl font-semibold tracking-tight mt-6 mb-4">BowdenCore Platform</h2>
-                <p class="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">Real-time monitoring, intelligent ticketing, and automated remediation in one beautiful dashboard.</p>
-            </div>
-            
-            <!-- Fake Interactive Dashboard -->
-            <div class="bg-zinc-900 rounded-3xl p-2 shadow-2xl">
-                <div class="bg-zinc-800 rounded-3xl p-8">
-                    <!-- Tabs -->
-                    <div class="flex border-b border-zinc-700 mb-8">
-                        <button onclick="switchTab(0)" class="tab-button active px-8 py-4 text-white border-b-2 border-[#FF6600]" id="tab-0">Overview</button>
-                        <button onclick="switchTab(1)" class="tab-button px-8 py-4 text-zinc-400 hover:text-white" id="tab-1">Devices</button>
-                        <button onclick="switchTab(2)" class="tab-button px-8 py-4 text-zinc-400 hover:text-white" id="tab-2">Alerts</button>
-                    </div>
-                    
-                    <div id="dashboard-content">
-                        <!-- Dynamic content loaded by JS -->
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                            <div class="bg-zinc-900 p-6 rounded-2xl">
-                                <div class="text-emerald-400 text-sm font-medium mb-1">SYSTEM HEALTH</div>
-                                <div id="health-metric" class="text-6xl font-mono font-bold text-emerald-400">99.8%</div>
-                            </div>
-                            <div onclick="fakeMetricClick(this)" class="bg-zinc-900 p-6 rounded-2xl cursor-pointer hover:bg-zinc-800 transition-colors dashboard-metric">
-                                <div class="text-amber-400 text-sm font-medium mb-1">OPEN TICKETS</div>
-                                <div id="tickets-metric" class="text-6xl font-mono font-bold">7</div>
-                            </div>
-                            <div class="bg-zinc-900 p-6 rounded-2xl">
-                                <div class="text-blue-400 text-sm font-medium mb-1">DEVICES MONITORED</div>
-                                <div id="devices-metric" class="text-6xl font-mono font-bold">1842</div>
-                            </div>
-                            <div class="bg-zinc-900 p-6 rounded-2xl">
-                                <div class="text-purple-400 text-sm font-medium mb-1">AVG RESPONSE</div>
-                                <div class="text-6xl font-mono font-bold text-purple-400">11m</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Tech Stack Section -->
+    <section id="stack" class="py-24">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Built With Robust Technology</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">React / Next.js</div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">Node.js / Python</div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">AWS / Vercel</div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">PostgreSQL / Redis</div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-24 bg-zinc-100 dark:bg-zinc-950">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-center heading-font text-4xl font-semibold mb-12">What Our Clients Say</h2>
-            <div id="testimonial-carousel" class="relative">
-                <!-- JS populated -->
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-24 bg-white dark:bg-zinc-900">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="heading-font text-5xl font-semibold text-center mb-4">Let's Secure Your Business</h2>
-            <p class="text-center text-zinc-600 dark:text-zinc-400 mb-12">Tell us about your needs. Our team responds fast.</p>
-            
-            <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" id="name" placeholder="Your Name" required class="w-full px-6 py-4 bg-zinc-100 dark:bg-zinc-800 border border-transparent focus:border-[#FF6600] rounded-2xl outline-none">
-                    <input type="email" id="email" placeholder="Business Email" required class="w-full px-6 py-4 bg-zinc-100 dark:bg-zinc-800 border border-transparent focus:border-[#FF6600] rounded-2xl outline-none">
-                </div>
-                <select id="service-type" class="w-full px-6 py-4 bg-zinc-100 dark:bg-zinc-800 border border-transparent focus:border-[#FF6600] rounded-2xl outline-none">
-                    <option value="">Select Service Interest</option>
-                    <option value="managed-it">Managed IT Services</option>
-                    <option value="cybersecurity">Cybersecurity</option>
-                    <option value="cloud">Cloud Solutions</option>
-                    <option value="platform">BowdenCore Platform</option>
-                </select>
-                <textarea id="message" rows="5" placeholder="Tell us about your current challenges..." class="w-full px-6 py-4 bg-zinc-100 dark:bg-zinc-800 border border-transparent focus:border-[#FF6600] rounded-2xl outline-none"></textarea>
-                <button type="submit" class="w-full bg-[#003087] hover:bg-blue-800 text-white py-5 rounded-3xl font-semibold text-lg transition-all">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-zinc-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-zinc-500">© 2026 BowdenCore. Orlando, Florida. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
+            <p>&copy; 2023 Bowden Core. All rights reserved.</p>
+            <p class="mt-2">Building high-performance software for the next generation of founders.</p>
         </div>
     </footer>
 
-    <!-- ASSESSMENT MODAL -->
-    <div id="assessment-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
-        <div onclick="event.stopImmediatePropagation()" class="bg-white dark:bg-zinc-900 rounded-3xl max-w-lg w-full mx-4 p-8">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-semibold">Free IT Assessment</h3>
-                <button onclick="hideAssessmentModal()" class="text-3xl leading-none text-zinc-400 hover:text-black">×</button>
-            </div>
-            <form onsubmit="submitAssessment(event)" class="space-y-6">
-                <input type="text" id="modal-name" placeholder="Company Name" class="w-full px-5 py-4 border rounded-2xl" required>
-                <input type="email" id="modal-email" placeholder="Your Email" class="w-full px-5 py-4 border rounded-2xl" required>
-                <textarea id="modal-notes" placeholder="What are your biggest IT pain points right now?" rows="4" class="w-full px-5 py-4 border rounded-2xl"></textarea>
-                <button type="submit" class="w-full bg-[#FF6600] text-white py-4 rounded-2xl font-semibold">Submit Assessment Request</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Tailwind script run
-        function initializeTailwind() {
-            tailwind.config = {
-                content: [],
-                theme: {
-                    extend: {}
-                }
-            }
-        }
-
-        // Smooth scroll
-        function smoothScrollTo(section) {
-            const el = document.getElementById(section);
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-        }
-
-        // Dark mode
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-            const icon = document.getElementById('theme-icon');
-            if (document.documentElement.classList.contains('dark')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        }
-
-        // Service cards data
-        const services = [
-            {
-                icon: "🛡️",
-                title: "Cybersecurity",
-                desc: "Advanced threat protection, compliance, and 24/7 monitoring.",
-                details: "Our SOC team uses AI-driven tools to stop threats before they impact your business."
-            },
-            {
-                icon: "☁️",
-                title: "Cloud Solutions",
-                desc: "Migration, management, and optimization of Microsoft 365 and Azure.",
-                details: "Seamless cloud adoption with our proven methodology and ongoing support."
-            },
-            {
-                icon: "📊",
-                title: "Managed IT",
-                desc: "Proactive IT support, helpdesk, and network management.",
-                details: "Our engineers act as an extension of your team with rapid response times."
-            }
-        ];
-
-        function renderServiceCards() {
-            const container = document.getElementById('service-cards');
-            container.innerHTML = services.map((service, index) => `
-                <div onclick="showServiceModal(${index})" class="service-card bg-white dark:bg-zinc-900 p-8 rounded-3xl cursor-pointer border border-transparent hover:border-orange-200">
-                    <div class="text-5xl mb-6">${service.icon}</div>
-                    <h3 class="text-2xl font-semibold mb-3">${service.title}</h3>
-                    <p class="text-zinc-600 dark:text-zinc-400">${service.desc}</p>
-                    <div class="text-[#FF6600] text-sm font-medium mt-8 flex items-center gap-2">
-                        Learn more <span class="text-xl leading-none">→</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function showServiceModal(index) {
-            const service = services[index];
-            const modalHTML = `
-                <div class="fixed inset-0 bg-black/70 z-[999] flex items-center justify-center" onclick="this.remove()">
-                    <div onclick="event.stopImmediatePropagation()" class="bg-white dark:bg-zinc-900 rounded-3xl max-w-md w-full mx-4 p-10">
-                        <div class="text-7xl mb-6">${service.icon}</div>
-                        <h3 class="text-4xl font-semibold mb-4">${service.title}</h3>
-                        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">${service.details}</p>
-                        <button onclick="this.closest('.fixed').remove()" class="mt-10 w-full py-4 bg-zinc-900 text-white rounded-2xl">Close</button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHTML);
-        }
-
-        // Fake Dashboard
-        let currentTab = 0;
-        function switchTab(tab) {
-            currentTab = tab;
-            document.querySelectorAll('.tab-button').forEach((btn, i) => {
-                if (i === tab) btn.classList.add('active', 'border-[#FF6600]', 'text-white');
-                else btn.classList.remove('active', 'border-[#FF6600]', 'text-white');
-            });
-            
-            const content = document.getElementById('dashboard-content');
-            if (tab === 0) {
-                content.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <div class="bg-zinc-900 p-6 rounded-2xl">
-                            <div class="text-emerald-400 text-sm font-medium mb-1">SYSTEM HEALTH</div>
-                            <div class="text-6xl font-mono font-bold text-emerald-400 dashboard-metric">99.8%</div>
-                        </div>
-                        <div onclick="fakeMetricClick(this)" class="bg-zinc-900 p-6 rounded-2xl cursor-pointer hover:bg-zinc-800 transition-colors dashboard-metric">
-                            <div class="text-amber-400 text-sm font-medium mb-1">OPEN TICKETS</div>
-                            <div class="text-6xl font-mono font-bold dashboard-metric" id="tickets-metric">7</div>
-                        </div>
-                        <div class="bg-zinc-900 p-6 rounded-2xl">
-                            <div class="text-blue-400 text-sm font-medium mb-1">DEVICES MONITORED</div>
-                            <div class="text-6xl font-mono font-bold text-blue-400 dashboard-metric">1,842</div>
-                        </div>
-                        <div class="bg-zinc-900 p-6 rounded-2xl">
-                            <div class="text-purple-400 text-sm font-medium mb-1">AVG RESPONSE</div>
-                            <div class="text-6xl font-mono font-bold text-purple-400">11m</div>
-                        </div>
-                    </div>
-                `;
-            } else if (tab === 1) {
-                content.innerHTML = `<div class="p-12 text-center text-zinc-400">Device list would appear here in the real platform.</div>`;
-            } else {
-                content.innerHTML = `<div class="p-12 text-center text-rose-400">Live security alerts dashboard.</div>`;
-            }
-        }
-
-        function fakeMetricClick(el) {
-            const metric = el.querySelector('.dashboard-metric');
-            if (metric) {
-                let value = parseInt(metric.textContent);
-                metric.textContent = value + Math.floor(Math.random() * 3) + 1;
-                metric.classList.add('text-orange-400');
-                setTimeout(() => metric.classList.remove('text-orange-400'), 800);
-            }
-        }
-
-        // Testimonials
-        const testimonials = [
-            { text: "BowdenCore transformed our IT from a cost center into a strategic advantage.", author: "Michael Torres", title: "CTO, Orlando Health Group" },
-            { text: "Their platform caught 3 ransomware attempts last year that our previous provider missed.", author: "Sarah Chen", title: "Director of Operations, Coastal Resorts" },
-            { text: "Local support that actually understands hospitality. Can't recommend them enough.", author: "James Rodriguez", title: "GM, Walt Disney World Swan & Dolphin" }
-        ];
-
-        function renderTestimonials() {
-            const container = document.getElementById('testimonial-carousel');
-            let current = 0;
-            
-            const html = `
-                <div class="bg-white dark:bg-zinc-900 p-10 rounded-3xl shadow-xl max-w-2xl mx-auto">
-                    <div id="testimonial-text" class="text-2xl italic leading-tight mb-8">"${testimonials[0].text}"</div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-2xl"></div>
-                        <div>
-                            <div id="testimonial-author" class="font-semibold">${testimonials[0].author}</div>
-                            <div id="testimonial-title" class="text-sm text-zinc-500">${testimonials[0].title}</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex justify-center gap-6 mt-10">
-                    <button onclick="prevTestimonial()" class="w-12 h-12 border border-zinc-300 dark:border-zinc-700 rounded-2xl flex items-center justify-center hover:bg-zinc-100"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button onclick="nextTestimonial()" class="w-12 h-12 border border-zinc-300 dark:border-zinc-700 rounded-2xl flex items-center justify-center hover:bg-zinc-100"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            `;
-            container.innerHTML = html;
-            
-            window.currentTestimonial = 0;
-        }
-
-        window.nextTestimonial = function() {
-            window.currentTestimonial = (window.currentTestimonial + 1) % testimonials.length;
-            updateTestimonial();
-        }
-
-        window.prevTestimonial = function() {
-            window.currentTestimonial = (window.currentTestimonial - 1 + testimonials.length) % testimonials.length;
-            updateTestimonial();
-        }
-
-        function updateTestimonial() {
-            const t = testimonials[window.currentTestimonial];
-            document.getElementById('testimonial-text').textContent = `"${t.text}"`;
-            document.getElementById('testimonial-author').textContent = t.author;
-            document.getElementById('testimonial-title').textContent = t.title;
-        }
-
-        // Form handling
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = "Sending...";
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.innerHTML = `✅ Message Received! We'll call you shortly.`;
-                btn.style.backgroundColor = '#10b981';
-                
-                setTimeout(() => {
-                    e.target.reset();
-                    btn.textContent = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.disabled = false;
-                }, 4000);
-            }, 1350);
-        }
-
-        function showAssessmentModal() {
-            document.getElementById('assessment-modal').classList.remove('hidden');
-            document.getElementById('assessment-modal').classList.add('flex');
-        }
-
-        function hideAssessmentModal() {
-            const modal = document.getElementById('assessment-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        function submitAssessment(e) {
-            e.preventDefault();
-            const modal = document.getElementById('assessment-modal');
-            modal.innerHTML = `
-                <div class="bg-emerald-600 text-white rounded-3xl p-12 text-center max-w-md mx-4">
-                    <div class="text-6xl mb-6">🎉</div>
-                    <h3 class="text-3xl font-semibold mb-3">Assessment Request Received</h3>
-                    <p class="mb-8">Our team will contact you within 4 hours to schedule your free IT assessment.</p>
-                    <button onclick="location.reload()" class="bg-white text-emerald-700 px-10 py-4 rounded-2xl font-semibold">Back to Site</button>
-                </div>
-            `;
-        }
-
-        // Keyboard shortcut for dark mode (Ctrl/Cmd + K)
-        document.addEventListener('keydown', (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                toggleDarkMode();
-            }
-        });
-
-        // Initialize everything
-        function initialize() {
-            initializeTailwind();
-            renderServiceCards();
-            renderTestimonials();
-            
-            // Set initial theme
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-                document.getElementById('theme-icon').classList.replace('fa-moon', 'fa-sun');
-            }
-            
-            // Make dashboard metrics pulse occasionally
-            setInterval(() => {
-                const metrics = document.querySelectorAll('.dashboard-metric');
-                if (metrics.length > 0) {
-                    const random = metrics[Math.floor(Math.random() * metrics.length)];
-                    random.style.transform = 'scale(1.08)';
-                    setTimeout(() => random.style.transform = 'scale(1)', 300);
-                }
-            }, 4500);
-            
-            console.log('%c✅ BowdenCore website initialized successfully', 'color:#FF6600; font-family:monospace');
-        }
-
-        window.onload = initialize;
-    </script>
 </body>
 </html>
