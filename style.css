@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ============================================
    CSS VARIABLES & THEME
    ============================================ */
@@ -46,23 +45,12 @@
    RESET & BASE STYLES
    ============================================ */
 
-=======
-:root {
-    --bg: #000000;
-    --text-main: #ffffff;
-    --text-dim: #888888;
-    --accent: #ffffff;
-    --nav-height: 70px;
-}
-
->>>>>>> b102a6620174b29c0e638de715c7341c1bb8bca7
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height);
@@ -878,117 +866,3 @@ section {
         --color-medium-gray: #e0e0e0;
     }
 }
-=======
-body {
-    background-color: var(--bg);
-    color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    overflow-x: hidden;
-}
-
-/* Neuralink-style Header */
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: var(--nav-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    z-index: 1000;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.logo {
-    font-weight: 700;
-    letter-spacing: -1px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: white;
-}
-
-.nav-links a {
-    color: var(--text-main);
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 1;
-}
-
-/* Transitions & Sections */
-section {
-    min-height: 100vh;
-    padding: 100px 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.hero-h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-}
-
-.sub-text {
-    font-size: 1.5rem;
-    color: var(--text-dim);
-    max-width: 600px;
-}
-
-/* Tech Showcase (Replacing CO Finder) */
-.tech-card {
-    margin-top: 5vh;
-    padding: 40px;
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.tech-card:hover {
-    transform: scale(1.02);
-    border-color: #333;
-}
-
-.tech-label {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--text-dim);
-    margin-bottom: 10px;
-    display: block;
-}
-
-/* Footer Neuralink Style */
-footer {
-    padding: 80px 10%;
-    background: #050505;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-}
-
-.footer-col h4 {
-    margin-bottom: 20px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: var(--text-dim);
-}
-
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 10px; }
-.footer-col a { color: white; text-decoration: none; opacity: 0.6; }
->>>>>>> b102a6620174b29c0e638de715c7341c1bb8bca7
