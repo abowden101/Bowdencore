@@ -1,88 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="assets/css/style.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bowden Core | Scaling Digital Infrastructure</title>
-    <meta name="description" content="Bowden Core provides expert software architecture and development services for high-growth startups.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bowden Core Networks | Orlando MSP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+<body>
 
-    <!-- Navigation -->
-    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-        <div class="text-2xl font-black tracking-tighter">BOWDEN CORE</div>
-        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-            <a href="#services" class="hover:text-blue-600 transition">Services</a>
-            <a href="#stack" class="hover:text-blue-600 transition">Tech Stack</a>
-            <a href="mailto:your-email@example.com" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg hover:bg-blue-600 transition">Get a Consultation</a>
-        </div>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-microchip"></i> Bowden Core</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#finder">CO Finder</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="max-w-5xl mx-auto px-6 pt-20 pb-32 text-center">
-        <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest mb-6">Available for Projects</span>
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-            We build the backbone of <br><span class="text-blue-600">modern digital startups.</span>
-        </h1>
-        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            From MVP architecture to enterprise-grade scalability. We translate complex business logic into clean, performant, and secure code.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:your-email@example.com" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition">Book a Technical Audit</a>
-            <a href="#services" class="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-slate-300 transition">View Our Process</a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Infrastructure Built for the Bold.</h1>
+            <p>Enterprise-grade networking for Orlando’s dental and financial sectors.</p>
         </div>
-    </header>
+    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Core Competencies</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6"></div>
-                    <h3 class="text-xl font-bold mb-3">MVP Development</h3>
-                    <p class="text-slate-600 leading-relaxed">Rapidly turn your vision into a functional, investor-ready product with our streamlined development roadmap.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6"></div>
-                    <h3 class="text-xl font-bold mb-3">System Scaling</h3>
-                    <p class="text-slate-600 leading-relaxed">Refactoring and infrastructure optimization to handle high traffic loads without compromising performance.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6"></div>
-                    <h3 class="text-xl font-bold mb-3">Code Audits</h3>
-                    <p class="text-slate-600 leading-relaxed">Identify bottlenecks, security risks, and technical debt in your existing codebase before they impact your growth.</p>
-                </div>
+    <section id="finder" class="finder-container">
+        <h2>Consultation Optimizer (CO) Finder</h2>
+        <p style="margin-bottom: 2rem; color: #888;">Select your industry to see tailored solutions.</p>
+        
+        <div class="filter-group">
+            <button class="filter-btn active" onclick="filterServices('all')">View All</button>
+            <button class="filter-btn" onclick="filterServices('dental')">Healthcare/Dental</button>
+            <button class="filter-btn" onclick="filterServices('finance')">Financial Services</button>
+            <button class="filter-btn" onclick="filterServices('new-build')">New Office Builds</button>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+            <div class="service-card" data-category="dental">
+                <i class="fas fa-user-shield"></i>
+                <h3>HIPAA Compliance</h3>
+                <p>A360-aligned network security designed for patient data integrity.</p>
+            </div>
+
+            <div class="service-card" data-category="finance">
+                <i class="fas fa-vault"></i>
+                <h3>Endpoint Defense</h3>
+                <p>Huntress & NinjaOne RMM integration for high-compliance environments.</p>
+            </div>
+
+            <div class="service-card" data-category="new-build">
+                <i class="fas fa-tools"></i>
+                <h3>Rapid Deployment</h3>
+                <p>Full-stack Ubiquiti setups (UDM/Switches/WAPs) for new office launches.</p>
+            </div>
+
+            <div class="service-card" data-category="all">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Cloud Continuity</h3>
+                <p>Scalable cloud migrations with zero-downtime guarantees.</p>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section id="stack" class="py-24">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12">Built With Robust Technology</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">React / Next.js</div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">Node.js / Python</div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">AWS / Vercel</div>
-                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100">PostgreSQL / Redis</div>
-            </div>
-        </div>
+    <section id="contact" class="contact-section">
+        <form id="coForm">
+            <h2 style="text-align:center; margin-bottom: 1.5rem;">Secure Your Infrastructure</h2>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Tell us about your current network challenges..." rows="5"></textarea>
+            <button type="submit" class="cta-button">Request Site Audit</button>
+        </form>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-            <p>&copy; 2023 Bowden Core. All rights reserved.</p>
-            <p class="mt-2">Building high-performance software for the next generation of founders.</p>
-        </div>
-    </footer>
+    <script>
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.service-card');
+            const buttons = document.querySelectorAll('.filter-btn');
 
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
