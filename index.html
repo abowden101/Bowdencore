@@ -3,262 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BowdenCore - Managed IT Services and Cybersecurity for Central Florida businesses">
     <title>BowdenCore | Interfacing Business with Intelligence</title>
+    <meta name="description" content="Orlando-based enterprise Managed IT, Zero-Trust Cybersecurity, and AI-powered automation. 99.99% uptime. Local white-glove support.">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Background Network Grid Animation -->
-    <canvas id="networkGrid" class="network-canvas"></canvas>
-
-    <!-- Navigation -->
-    <nav class="navigation">
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-mark">⬤</span>
-                <span class="logo-text">BowdenCore</span>
-            </a>
-            <div class="nav-links">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#infrastructure" class="nav-link">Infrastructure</a>
-                <a href="#platform" class="nav-link">Platform</a>
-                <a href="#contact" class="nav-link">Careers</a>
-            </div>
-            <button class="cta-button" data-section="contact">Schedule Audit</button>
+            <div class="logo">Bowden<span>Core</span></div>
+            <ul class="nav-links">
+                <li><a href="#capabilities">Services</a></li>
+                <li><a href="#platform">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#assessment" class="cta-button">Get Free Assessment</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="hero-content">
-            <div class="hero-label" data-scroll>Engineering</div>
-            <h1 class="hero-title" data-scroll>
-                Interfacing Business<br>
-                <span class="title-accent">with Intelligence</span>
-            </h1>
-            <p class="hero-subtitle" data-scroll>
-                Enterprise-grade managed IT, cybersecurity, and infrastructure automation designed for Central Florida's most demanding organizations. Zero-trust architecture. Measurable uptime.
-            </p>
-            <div class="hero-cta" data-scroll>
-                <button class="button button-primary">Start Assessment</button>
-                <button class="button button-secondary">Explore Platform</button>
+            <h1>Interfacing Business with Intelligence</h1>
+            <p class="subtitle">Enterprise-grade Managed IT + AI-powered automation for Central Florida businesses.</p>
+            <div class="hero-ctas">
+                <a href="#assessment" class="cta-primary">Schedule Free 30-min Assessment</a>
+                <a href="#platform" class="cta-secondary">Explore the Platform</a>
+            </div>
+            <div class="trust-bar">
+                <span>99.99% Uptime SLA</span>
+                <span>Sub-4hr Response</span>
+                <span>SOC 2 • HIPAA Compliant</span>
+            </div>
+        </div>
+        <!-- Network grid background handled in CSS/JS -->
+    </header>
+
+    <!-- Core Capabilities -->
+    <section id="capabilities" class="section">
+        <h2>Core Capabilities</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Managed IT Infrastructure</h3>
+                <p>Proactive monitoring, automated remediation, and 24/7 support.</p>
+            </div>
+            <div class="card">
+                <h3>Zero-Trust Cybersecurity</h3>
+                <p>Advanced threat protection with real-time AI detection.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Migration & Automation</h3>
+                <p>Seamless AWS/Azure/GCP migrations with 60% faster MTTR.</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-header" data-scroll>
-            <div class="section-label">Core Capabilities</div>
-            <h2>What We Build</h2>
+    <!-- Proprietary Platform -->
+    <section id="platform" class="section platform-section">
+        <h2>Our Proprietary Platform</h2>
+        <p class="section-desc">Real-time visibility. AI-powered ticketing. Autonomous issue resolution.</p>
+        
+        <!-- Add your actual screenshots here -->
+        <div class="platform-demo">
+            <img src="platform-screenshot-1.jpg" alt="BowdenCore Dashboard - Real-time Monitoring" class="demo-img">
+            <img src="platform-screenshot-2.jpg" alt="AI Ticketing System" class="demo-img">
         </div>
         
-        <div class="services-grid">
-            <div class="service-card" data-scroll>
-                <div class="card-label">01 // Managed IT</div>
-                <h3>Infrastructure Management</h3>
-                <p>24/7 monitoring, patch automation, and proactive threat detection. Your network becomes invisible infrastructure—it just works.</p>
-                <ul class="service-list">
-                    <li>Network & Server Management</li>
-                    <li>Hardware Lifecycle Planning</li>
-                    <li>Multi-location Deployment</li>
-                </ul>
-            </div>
-
-            <div class="service-card" data-scroll>
-                <div class="card-label">02 // Security</div>
-                <h3>Zero-Trust Architecture</h3>
-                <p>Multi-layered defense with continuous authentication, encrypted traffic, and threat intelligence. Compliance built in by design.</p>
-                <ul class="service-list">
-                    <li>Vulnerability Management</li>
-                    <li>Endpoint Protection & EDR</li>
-                    <li>Compliance (SOC2, HIPAA)</li>
-                </ul>
-            </div>
-
-            <div class="service-card" data-scroll>
-                <div class="card-label">03 // Cloud & Migration</div>
-                <h3>Intelligent Scaling</h3>
-                <p>Seamless cloud adoption with zero migration downtime. Cost optimization and disaster recovery built into every deployment.</p>
-                <ul class="service-list">
-                    <li>AWS/Azure Architecture</li>
-                    <li>Data Migration & Backup</li>
-                    <li>Cost Optimization</li>
-                </ul>
-            </div>
-
-            <div class="service-card" data-scroll>
-                <div class="card-label">04 // Support & Automation</div>
-                <h3>Autonomous Oversight</h3>
-                <p>Proprietary ticketing and automation platform that resolves issues before they become outages. Intelligent remediation at scale.</p>
-                <ul class="service-list">
-                    <li>Intelligent Help Desk</li>
-                    <li>Workflow Automation</li>
-                    <li>SLA-Based Reporting</li>
-                </ul>
-            </div>
+        <div class="metrics">
+            <div>80% Issues Resolved Autonomously</div>
+            <div>60% Faster Mean Time To Resolution</div>
+            <div>24/7 AI + Human Oversight</div>
         </div>
     </section>
 
-    <!-- Infrastructure Section -->
-    <section id="infrastructure" class="infrastructure">
-        <div class="section-header" data-scroll>
-            <div class="section-label">Territory & Reach</div>
-            <h2>Central Florida Coverage</h2>
-        </div>
-
-        <div class="infrastructure-content">
-            <div class="infra-text" data-scroll>
-                <h3>Localized Expertise, Enterprise Scale</h3>
-                <p>Headquartered in Orlando with deep roots in Central Florida's medical, hospitality, and tech sectors. We maintain sub-4-hour response times for critical infrastructure while leveraging enterprise-grade tooling and automation.</p>
-                
-                <div class="infrastructure-stats">
-                    <div class="stat" data-scroll>
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Active Clients</div>
-                    </div>
-                    <div class="stat" data-scroll>
-                        <div class="stat-number">99.99%</div>
-                        <div class="stat-label">Uptime SLA</div>
-                    </div>
-                    <div class="stat" data-scroll>
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Monitoring</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="infra-diagram" data-scroll>
-                <div class="diagram-placeholder">
-                    <svg viewBox="0 0 300 300" class="network-diagram">
-                        <!-- Central hub -->
-                        <circle cx="150" cy="150" r="20" class="hub" />
-                        
-                        <!-- Surrounding nodes -->
-                        <circle cx="50" cy="50" r="12" class="node" />
-                        <circle cx="250" cy="50" r="12" class="node" />
-                        <circle cx="250" cy="250" r="12" class="node" />
-                        <circle cx="50" cy="250" r="12" class="node" />
-                        <circle cx="150" cy="30" r="12" class="node" />
-                        <circle cx="270" cy="150" r="12" class="node" />
-                        <circle cx="150" cy="270" r="12" class="node" />
-                        <circle cx="30" cy="150" r="12" class="node" />
-                        
-                        <!-- Connections -->
-                        <line x1="150" y1="150" x2="50" y2="50" class="connection" />
-                        <line x1="150" y1="150" x2="250" y2="50" class="connection" />
-                        <line x1="150" y1="150" x2="250" y2="250" class="connection" />
-                        <line x1="150" y1="150" x2="50" y2="250" class="connection" />
-                        <line x1="150" y1="150" x2="150" y2="30" class="connection" />
-                        <line x1="150" y1="150" x2="270" y2="150" class="connection" />
-                        <line x1="150" y1="150" x2="150" y2="270" class="connection" />
-                        <line x1="150" y1="150" x2="30" y2="150" class="connection" />
-                    </svg>
-                </div>
-            </div>
+    <!-- Social Proof -->
+    <section class="section testimonials">
+        <h2>Trusted by Central Florida Organizations</h2>
+        <div class="testimonial-grid">
+            <!-- Add real testimonials here -->
+            <div class="testimonial">"BowdenCore transformed our IT from reactive to truly proactive." — Medical Practice, Winter Park</div>
         </div>
     </section>
 
-    <!-- Platform Section -->
-    <section id="platform" class="platform">
-        <div class="section-header" data-scroll>
-            <div class="section-label">Proprietary Technology</div>
-            <h2>BowdenCore Platform</h2>
-        </div>
-
-        <div class="platform-content" data-scroll>
-            <div class="platform-feature">
-                <h3>Real-Time Monitoring</h3>
-                <p>Live visibility into every system, network device, and application. Anomalies detected in milliseconds, not hours.</p>
-            </div>
-            <div class="platform-feature">
-                <h3>Intelligent Ticketing</h3>
-                <p>AI-powered ticket routing and prioritization. Context-aware responses that cut MTTR by 60%.</p>
-            </div>
-            <div class="platform-feature">
-                <h3>Automated Remediation</h3>
-                <p>Self-healing infrastructure. 80% of issues resolved without human intervention.</p>
-            </div>
-            <div class="platform-feature">
-                <h3>Compliance Dashboard</h3>
-                <p>Real-time compliance status, audit trails, and automated documentation. SOC2 & HIPAA ready.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content" data-scroll>
-            <h2>Ready to Transform Your Infrastructure?</h2>
-<<<<<<< HEAD
-            <p>Get a free 30-minute security audit and infrastructure assessment from your team.</p>
-=======
-            <p>Get a free 30-minute security audit and infrastructure assessment from our team.</p>
->>>>>>> b102a6620174b29c0e638de715c7341c1bb8bca7
-            <button class="button button-primary button-large" data-section="contact">Schedule Assessment</button>
-        </div>
+    <!-- CTA Section (Fixed Conflict) -->
+    <section id="assessment" class="cta-section">
+        <h2>Ready to Transform Your Infrastructure?</h2>
+        <p>Get a free 30-minute security audit and infrastructure assessment from our Orlando team.</p>
+        <a href="#" class="cta-button large">Schedule Assessment Now</a>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>BowdenCore</h4>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#infrastructure">Infrastructure</a></li>
-                    <li><a href="#platform">Platform</a></li>
-                    <li><a href="mailto:contact@bowdencore.com">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Press</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Security</a></li>
-                    <li><a href="#">Compliance</a></li>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Status</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#">Twitter / X</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Discord</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 BowdenCore. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Security & Compliance</a>
-            </div>
-        </div>
+    <footer id="contact">
+        <p>&copy; 2026 BowdenCore. Orlando, Florida. All rights reserved.</p>
+        <p><a href="mailto:info@bowdencore.com">info@bowdencore.com</a> | (407) XXX-XXXX</p>
     </footer>
 
     <script src="main.js"></script>
-</body>
-</html>
-            <span>&copy; Bowden Core 2026</span>
-        </div>
-    </footer>
-
 </body>
 </html>
