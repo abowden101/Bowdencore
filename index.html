@@ -3,120 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BowdenCore | Interfacing Business with Intelligence</title>
-    <meta name="description" content="Orlando-based enterprise Managed IT, Zero-Trust Cybersecurity, and AI-powered automation. 99.99% uptime. Local white-glove support.">
+    <title>BowdenCore — Managed IT for Central Florida Businesses</title>
+    <meta name="description" content="BowdenCore provides managed IT infrastructure, cybersecurity, and cloud automation for Central Florida businesses — engineer-led, Orlando-based. Request a free 30-minute assessment.">
+    <meta property="og:title" content="BowdenCore — Managed IT for Central Florida Businesses">
+    <meta property="og:description" content="Proactive IT, real cybersecurity, and automation from an engineer-led MSP in Orlando. Free 30-min assessment.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sticky Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Bowden<span>Core</span></div>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="#" class="logo">Bowden<span class="logo-accent">Core</span></a>
             <ul class="nav-links">
-                <li><a href="#capabilities">Services</a></li>
-                <li><a href="#platform">Platform</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why us</a></li>
+                <li><a href="#process">Process</a></li>
             </ul>
-            <a href="#assessment" class="cta-button">Get Free Assessment</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Interfacing Business with Intelligence</h1>
-            <p class="subtitle">Enterprise-grade Managed IT + AI-powered automation for Central Florida businesses.</p>
-            <div class="hero-ctas">
-                <a href="#assessment" class="cta-primary">Schedule Free 30-min Assessment</a>
-                <a href="#platform" class="cta-secondary">Explore the Platform</a>
-            </div>
-            <div class="trust-bar">
-                <span>99.99% Uptime SLA</span>
-                <span>Sub-4hr Response</span>
-                <span>SOC 2 • HIPAA Compliant</span>
-            </div>
-        </div>
-        <!-- Network grid background handled in CSS/JS -->
+            <a href="#contact" class="btn btn-primary btn-sm">Free assessment</a>
+        </nav>
     </header>
 
-    <!-- Core Capabilities -->
-    <section id="capabilities" class="section">
-        <h2>Core Capabilities</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Managed IT Infrastructure</h3>
-                <p>Proactive monitoring, automated remediation, and 24/7 support.</p>
+    <main>
+        <section class="hero container">
+            <p class="eyebrow reveal">Managed IT &middot; Orlando, Florida</p>
+            <h1 class="reveal">IT handled by an engineer,<br>not a call center.</h1>
+            <p class="hero-sub reveal">BowdenCore gives Central Florida businesses proactive infrastructure, real cybersecurity, and automation — led by a network engineer who's run systems for healthcare organizations.</p>
+            <div class="hero-ctas reveal">
+                <a href="#contact" class="btn btn-primary">Get a free 30-min assessment</a>
+                <a href="#services" class="btn btn-ghost">See services</a>
             </div>
-            <div class="card">
-                <h3>Zero-Trust Cybersecurity</h3>
-                <p>Advanced threat protection with real-time AI detection.</p>
+            <p class="hero-note reveal">Now accepting a small number of founding clients.</p>
+        </section>
+
+        <section id="services" class="section container">
+            <p class="eyebrow reveal">Services</p>
+            <h2 class="reveal">Everything your IT should<br>already be doing.</h2>
+            <div class="cards">
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>
+                    </div>
+                    <h3>Managed IT infrastructure</h3>
+                    <p>Proactive monitoring, patching, and maintenance for your servers, network, and endpoints. Problems get fixed before your team notices them.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Firewall management, endpoint protection, and security hardening built on zero-trust principles — sized for small business budgets and compliance needs.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 19a4.5 4.5 0 100-9 6 6 0 00-11.5 1.5A4 4 0 006.5 19h11z"/></svg>
+                    </div>
+                    <h3>Cloud &amp; automation</h3>
+                    <p>Microsoft 365 and cloud migrations, plus automation that kills repetitive IT busywork — ticketing, onboarding, and reporting that run themselves.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Cloud Migration & Automation</h3>
-                <p>Seamless AWS/Azure/GCP migrations with 60% faster MTTR.</p>
+        </section>
+
+        <section id="why" class="section section-alt">
+            <div class="container">
+                <p class="eyebrow reveal">Why BowdenCore</p>
+                <h2 class="reveal">Founder-led. Engineer-run.</h2>
+                <p class="section-lead reveal">BowdenCore was started by a senior network &amp; security engineer with five years running IT infrastructure — including healthcare environments where downtime isn't an option.</p>
+                <div class="cards">
+                    <div class="card reveal">
+                        <h3>Real operations background</h3>
+                        <p>Cisco, Fortinet, Palo Alto, and Ubiquiti networks; Azure AD and Microsoft 365; HIPAA-regulated environments. You've got the person who actually fixes things — not a sales rep.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Security-first by default</h3>
+                        <p>Every engagement starts from a hardened baseline: segmented networks, patched systems, and monitored endpoints. Security isn't an upsell here.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Built for small business</h3>
+                        <p>Enterprise-grade practices without enterprise-grade overhead. Straight pricing, plain-English reporting, and a direct line to your engineer.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Proprietary Platform -->
-    <section id="platform" class="section platform-section">
-        <h2>Our Proprietary Platform</h2>
-        <p class="section-desc">Real-time visibility. AI-powered ticketing. Autonomous issue resolution.</p>
-        
-        <!-- Add your actual screenshots here -->
-        <div class="platform-demo">
-            <img src="platform-screenshot-1.jpg" alt="BowdenCore Dashboard - Real-time Monitoring" class="demo-img">
-            <img src="platform-screenshot-2.jpg" alt="AI Ticketing System" class="demo-img">
-        </div>
-        
-        <div class="metrics">
-            <div>80% Issues Resolved Autonomously</div>
-            <div>60% Faster Mean Time To Resolution</div>
-            <div>24/7 AI + Human Oversight</div>
-        </div>
-    </section>
+        <section id="process" class="section container">
+            <p class="eyebrow reveal">How it works</p>
+            <h2 class="reveal">From first call to fully<br>managed in four steps.</h2>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-num">1</div>
+                    <h3>Free assessment</h3>
+                    <p>A 30-minute look at your current setup: what's working, what's exposed, and what it would take to fix.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-num">2</div>
+                    <h3>Straightforward plan</h3>
+                    <p>You get a written plan with clear scope and pricing. No jargon, no surprise line items.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-num">3</div>
+                    <h3>Onboarding</h3>
+                    <p>We deploy monitoring, harden your systems, and document everything — with minimal disruption to your team.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-num">4</div>
+                    <h3>Ongoing management</h3>
+                    <p>Proactive maintenance, fast response when something breaks, and a regular report in plain English.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Social Proof -->
-    <section class="section testimonials">
-        <h2>Trusted by Central Florida Organizations</h2>
-        <div class="testimonial-grid">
-            <!-- Add real testimonials here -->
-            <div class="testimonial">"BowdenCore transformed our IT from reactive to truly proactive." — Medical Practice, Winter Park</div>
-        </div>
-    </section>
+        <section id="contact" class="section section-alt">
+            <div class="container narrow">
+                <p class="eyebrow reveal">Get started</p>
+                <h2 class="reveal">Request your free assessment</h2>
+                <p class="section-lead reveal">Thirty minutes, no pitch. We'll look at your setup and tell you honestly where you stand.</p>
+                <form id="lead-form" class="lead-form reveal" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="f-name">Full name</label>
+                            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith">
+                        </div>
+                        <div class="form-field">
+                            <label for="f-email">Work email</label>
+                            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@company.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="f-company">Company</label>
+                            <input id="f-company" name="company" type="text" required autocomplete="organization" placeholder="Company, Inc.">
+                        </div>
+                        <div class="form-field">
+                            <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+                            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(407) 555-0123">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="f-size">Company size</label>
+                        <select id="f-size" name="company_size">
+                            <option value="">Select…</option>
+                            <option>1–10 employees</option>
+                            <option>11–50 employees</option>
+                            <option>51–200 employees</option>
+                            <option>200+ employees</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="f-msg">What's going on with your IT?</label>
+                        <textarea id="f-msg" name="message" rows="4" placeholder="Slow systems, security worries, upcoming project — tell us what's on your mind…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="form-submit">Request free assessment</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
 
-        <!-- Proprietary Platform Section (example) -->
-    <section id="platform" class="section platform-section">
-        <h2>Our Proprietary Platform</h2>
-        <p class="section-desc">Real-time visibility. AI-powered ticketing. Autonomous issue resolution.</p>
-        
-        <div class="platform-demo">
-            <!-- Add your screenshots here later -->
-            <img src="assets/platform-dashboard.jpg" alt="BowdenCore Dashboard" class="demo-img">
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="#" class="logo">Bowden<span class="logo-accent">Core</span></a>
+            <p>&copy; 2026 BowdenCore &middot; Orlando, Florida &middot; <a href="mailto:info@bowdencore.com">info@bowdencore.com</a></p>
         </div>
-        
-        <div class="metrics">
-            <div>80% Issues Resolved Autonomously</div>
-            <div>60% Faster Mean Time To Resolution</div>
-            <div>24/7 AI + Human Oversight</div>
-        </div>
-    </section>
-
-    <!-- Clean CTA Section -->
-    <section id="assessment" class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Infrastructure?</h2>
-            <p>Get a free 30-minute security audit and infrastructure assessment from our Orlando team.</p>
-            <a href="#contact" class="cta-button large">Schedule Assessment Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2026 BowdenCore. Orlando, Florida. All rights reserved.</p>
-        <p><a href="mailto:info@bowdencore.com">info@bowdencore.com</a> | (407) XXX-XXXX</p>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>

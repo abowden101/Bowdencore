@@ -1,104 +1,83 @@
-// BowdenCore - Updated main.js for Startup
+// BowdenCore — bowdencore.com
+// Lead capture: set your Formspree form ID below (free at formspree.io).
+// Until then, submissions open the visitor's email client addressed to us.
+const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
+const FALLBACK_EMAIL = "info@bowdencore.com";
 
-// Network Particle Animation (kept your original aesthetic)
-const canvas = document.createElement('canvas');
-canvas.id = 'network-canvas';
-document.body.appendChild(canvas);
+(function () {
+    "use strict";
 
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-let particles = [];
-
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-    }
-    draw() {
-        ctx.fillStyle = 'rgba(0, 217, 255, 0.8)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
-
-function initParticles() {
-    particles = [];
-    const numberOfParticles = Math.floor(canvas.width * canvas.height / 9000);
-    for (let i = 0; i < numberOfParticles; i++) {
-        particles.push(new Particle());
-    }
-}
-
-function connectParticles() {
-    for (let a = 0; a < particles.length; a++) {
-        for (let b = a; b < particles.length; b++) {
-            const dx = particles[a].x - particles[b].x;
-            const dy = particles[a].y - particles[b].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 120) {
-                ctx.strokeStyle = `rgba(0, 217, 255, ${1 - distance / 120})`;
-                ctx.lineWidth = 0.8;
-                ctx.beginPath();
-                ctx.moveTo(particles[a].x, particles[a].y);
-                ctx.lineTo(particles[b].x, particles[b].y);
-                ctx.stroke();
+    // Reveal-on-scroll
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
             }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Header shadow on scroll
+    const header = document.querySelector(".site-header");
+    addEventListener("scroll", () => header.classList.toggle("scrolled", scrollY > 10), { passive: true });
+
+    // Lead form
+    const form = document.getElementById("lead-form");
+    if (!form) return;
+    const status = document.getElementById("form-status");
+    const submitBtn = document.getElementById("form-submit");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("f-name").value.trim();
+        const email = document.getElementById("f-email").value.trim();
+        const company = document.getElementById("f-company").value.trim();
+        if (!name || !email || !company) {
+            status.textContent = "Please fill in your name, work email, and company.";
+            status.className = "form-status error";
+            return;
         }
-    }
-}
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            status.textContent = "That email address doesn\u2019t look right \u2014 mind checking it?";
+            status.className = "form-status error";
+            return;
+        }
+        const data = Object.fromEntries(new FormData(form).entries());
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-    }
-    
-    connectParticles();
-    requestAnimationFrame(animate);
-}
+        if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
+            // Fallback: open email client with the details prefilled
+            const subject = encodeURIComponent("Free assessment request \u2014 " + company);
+            const body = encodeURIComponent(
+                "Name: " + data.name + "\nEmail: " + data.email + "\nCompany: " + data.company +
+                "\nPhone: " + (data.phone || "\u2014") +
+                "\nCompany size: " + (data.company_size || "\u2014") +
+                "\n\n" + (data.message || "")
+            );
+            window.location.href = "mailto:" + FALLBACK_EMAIL + "?subject=" + subject + "&body=" + body;
+            status.textContent = "Opening your email client to send the request\u2026";
+            status.className = "form-status ok";
+            return;
+        }
 
-initParticles();
-animate();
-
-// Smooth scrolling for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        if (this.getAttribute('href') !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending\u2026";
+        try {
+            const res = await fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify(data),
+            });
+            if (!res.ok) throw new Error("send failed");
+            status.textContent = "Thanks \u2014 your request is in. We\u2019ll be in touch within one business day.";
+            status.className = "form-status ok";
+            form.reset();
+        } catch (err) {
+            status.textContent = "Something went wrong sending that. Please email us directly at " + FALLBACK_EMAIL + ".";
+            status.className = "form-status error";
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Request free assessment";
         }
     });
-});
-
-// Re-init particles on resize
-window.addEventListener('resize', () => {
-    resizeCanvas();
-    initParticles();
-});
+})();
