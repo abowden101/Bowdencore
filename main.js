@@ -3,6 +3,10 @@
 // Until then, submissions open the visitor's email client addressed to us.
 const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
 const FALLBACK_EMAIL = "info@bowdencore.com";
+// Paid audit checkout: paste your Stripe Payment Link below
+// (Stripe Dashboard > Payments > Payment Links > create a $97 one-time link).
+// Until then, the audit button scrolls to the contact form instead.
+const STRIPE_AUDIT_URL = "YOUR_STRIPE_PAYMENT_LINK";
 
 (function () {
     "use strict";
@@ -21,6 +25,25 @@ const FALLBACK_EMAIL = "info@bowdencore.com";
     // Header shadow on scroll
     const header = document.querySelector(".site-header");
     addEventListener("scroll", () => header.classList.toggle("scrolled", scrollY > 10), { passive: true });
+
+    // Paid audit CTA: Stripe checkout, or fall back to the contact form
+    const auditCta = document.getElementById("audit-cta");
+    const auditNote = document.getElementById("audit-note");
+    if (auditCta) {
+        if (STRIPE_AUDIT_URL === "YOUR_STRIPE_PAYMENT_LINK") {
+            auditCta.addEventListener("click", (e) => {
+                e.preventDefault();
+                const msg = document.getElementById("f-msg");
+                if (msg && !msg.value) msg.value = "I\u2019m interested in the $97 IT Health Check.";
+                document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+            });
+            if (auditNote) auditNote.textContent = "No payment due now \u2014 request it below and we\u2019ll schedule you.";
+        } else {
+            auditCta.href = STRIPE_AUDIT_URL;
+            auditCta.target = "_blank";
+            auditCta.rel = "noopener";
+        }
+    }
 
     // Lead form
     const form = document.getElementById("lead-form");
