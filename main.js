@@ -1,7 +1,7 @@
 // BowdenCore — bowdencore.com
-// Lead capture: set your Formspree form ID below (free at formspree.io).
-// Until then, submissions open the visitor's email client addressed to us.
-const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
+// Lead capture: Formspree (form ID xqpeqgew).
+// If the endpoint ever fails, submissions fall back to the visitor's email client.
+const FORMSPREE_ID = "xqpeqgew";
 const FALLBACK_EMAIL = "info@bowdencore.com";
 // Paid audit checkout: paste your Stripe Payment Link below
 // (Stripe Dashboard > Payments > Payment Links > create a $97 one-time link).
@@ -67,6 +67,8 @@ const STRIPE_AUDIT_URL = "YOUR_STRIPE_PAYMENT_LINK";
             return;
         }
         const data = Object.fromEntries(new FormData(form).entries());
+            data.site = "bowdencore.com";
+            data._subject = "New BowdenCore lead — " + data.company;
 
         if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
             // Fallback: open email client with the details prefilled
