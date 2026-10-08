@@ -1,26 +1,30 @@
-# BowdenCore
+# BowdenCore — bowdencore.com
 
-Managed IT infrastructure, cybersecurity, and cloud automation for Central Florida businesses — engineer-led, Orlando-based.
+UniFi-native Managed Network Services for Central Florida small businesses,
+dental practices, and medical offices.
 
-This repository contains the marketing website deployed at **bowdencore.com** (GitHub Pages).
+## Site structure
 
-## Site
+Pure HTML/CSS/JS — no build step. Served by GitHub Pages.
 
-Pure HTML/CSS/JavaScript — no build step. `index.html` is a single-page site:
-
-- `index.html` — full site (hero, services, why us, process, lead form)
-- `style.css` — theme and layout
-- `main.js` — scroll animations, header state, lead-form handling
+- `index.html` — home: hero, trust strip, differentiator, stages preview, audit CTA
+- `services.html` — Stage 1 (UniFi Foundation) + Stage 2 (NGFW security & compliance)
+- `about.html` — mission, UniFi technology philosophy, credentials
+- `portfolio.html` — industries served, illustrative example engagement
+- `contact.html` — $97 Network Health Check + lead form
+- `style.css`, `main.js` — shared stylesheet and scripts
+- `assets/` — site imagery (`hero-closet.jpg`, `office-rack.jpg`)
+- `favicon.svg`, `og-image.jpg` — brand assets
 
 ## Lead form
 
-The contact form posts to [Formspree](https://formspree.io). Set your form ID in `main.js`:
+The contact form posts to Formspree (`xqpeqgew`, configured in `main.js`).
+Submissions are tagged with the site origin and a subject line.
 
-```js
-const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
-```
+## Paid audit checkout
 
-Until a real ID is set, submissions fall back to opening the visitor's email client addressed to `info@bowdencore.com`.
+Set `STRIPE_AUDIT_URL` in `main.js` to a Stripe Payment Link for the $97
+Health Check. Until then, audit CTAs route to `contact.html?interest=audit`.
 
 ## Local preview
 
@@ -29,10 +33,7 @@ python -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Deploy
+## mcp-assistant/
 
-Push to `main` — GitHub Pages serves the site automatically.
-
-## Internal tool: Grok MCP assistant
-
-`mcp-assistant/` holds a separate local project — a FastAPI + Ollama assistant for ticket triage and MSP workflows. It is not part of the website. See `mcp-assistant/README.md` for setup.
+Separate local project (FastAPI + Ollama assistant). Not part of the website.
+See `mcp-assistant/README.md`.

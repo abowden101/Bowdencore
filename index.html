@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BowdenCore — Managed IT for Central Florida Businesses</title>
-    <meta name="description" content="BowdenCore provides managed IT infrastructure, cybersecurity, and cloud automation for Central Florida businesses — engineer-led, Orlando-based. Request a free 30-minute assessment.">
-    <meta property="og:title" content="BowdenCore — Managed IT for Central Florida Businesses">
-    <meta property="og:description" content="Proactive IT, real cybersecurity, and automation from an engineer-led MSP in Orlando. Free 30-min assessment.">
+    <title>BowdenCore — UniFi-Native Managed Network Services | Orlando, FL</title>
+    <meta name="description" content="BowdenCore delivers UniFi-native managed network services for Orlando small businesses and dental practices. Zero license bloat — your fee funds engineering, not vendor subscriptions.">
+    <meta property="og:title" content="BowdenCore — Your Network. Engineered. Simplified.">
+    <meta property="og:description" content="UniFi-native managed network services for Central Florida. Maximize uptime, minimize license bloat.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://bowdencore.com/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -22,212 +22,155 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="nav container">
-            <a href="#" class="logo">Bowden<span class="logo-accent">Core</span></a>
+        <nav class="nav container" aria-label="Primary">
+            <a href="index.html" class="logo">Bowden<span class="logo-accent">Core</span></a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#why">Why us</a></li>
-                <li><a href="#audit">$97 Audit</a></li>
-                <li><a href="#process">Process</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Proof</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="#contact" class="btn btn-primary btn-sm">Free assessment</a>
+            <a href="contact.html?interest=audit" class="btn btn-primary btn-sm nav-cta" data-audit-cta>Health Check</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero container">
-            <p class="eyebrow reveal">Managed IT &middot; Orlando, Florida</p>
-            <h1 class="reveal">IT handled by an engineer,<br>not a call center.</h1>
-            <p class="hero-sub reveal">BowdenCore gives Central Florida businesses proactive infrastructure, real cybersecurity, and automation — led by a network engineer who's run systems for healthcare organizations.</p>
-            <div class="hero-ctas reveal">
-                <a href="#contact" class="btn btn-primary">Get a free 30-min assessment</a>
-                <a href="#services" class="btn btn-ghost">See services</a>
-            </div>
-            <p class="hero-note reveal">Now accepting a small number of founding clients.</p>
-        </section>
-
-        <section id="services" class="section container">
-            <p class="eyebrow reveal">Services</p>
-            <h2 class="reveal">Everything your IT should<br>already be doing.</h2>
-            <div class="cards">
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>
+        <section class="hero">
+            <div class="container hero-split">
+                <div>
+                    <p class="eyebrow reveal">Managed Network Services &middot; Orlando, FL</p>
+                    <h1 class="reveal">Your Network.<br>Engineered. Simplified.</h1>
+                    <p class="hero-sub reveal">BowdenCore delivers optimized, secure network infrastructure on the Ubiquiti UniFi stack. Maximize uptime and minimize license bloat — handled by engineers, not call centers.</p>
+                    <div class="hero-ctas reveal">
+                        <a href="services.html" class="btn btn-primary">Our UniFi-Native Service Stack</a>
+                        <a href="contact.html?interest=audit" class="btn btn-ghost" data-audit-cta>Start with Your $97 Network Health Check</a>
                     </div>
-                    <h3>Managed IT infrastructure</h3>
-                    <p>Proactive monitoring, patching, and maintenance for your servers, network, and endpoints. Problems get fixed before your team notices them.</p>
+                    <p class="hero-note reveal">Now onboarding founding clients across Greater Orlando.</p>
                 </div>
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Firewall management, endpoint protection, and security hardening built on zero-trust principles — sized for small business budgets and compliance needs.</p>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 19a4.5 4.5 0 100-9 6 6 0 00-11.5 1.5A4 4 0 006.5 19h11z"/></svg>
-                    </div>
-                    <h3>Cloud &amp; automation</h3>
-                    <p>Microsoft 365 and cloud migrations, plus automation that kills repetitive IT busywork — ticketing, onboarding, and reporting that run themselves.</p>
+                <div class="reveal">
+                    <img onerror="this.style.display='none'" src="assets/hero-closet.jpg" alt="Clean, professionally cabled network rack managed by BowdenCore" class="hero-img" loading="eager">
                 </div>
             </div>
         </section>
 
-        <section id="why" class="section section-alt">
+        <div class="trust-strip">
+            <div class="container reveal">
+                <span class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+                    <span><strong>Ubiquiti UEWA &middot; UWA</strong> <span class="pill">In progress</span></span>
+                </span>
+                <span class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    <span><strong>Engineer-led</strong>&nbsp;&middot; Orlando-based</span>
+                </span>
+                <span class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+                    <span>Equipment sourced via <strong>authorized distributors</strong></span>
+                </span>
+            </div>
+        </div>
+
+        <section class="section container">
+            <p class="eyebrow reveal">The difference</p>
+            <h2 class="reveal">Where your monthly fee<br>actually goes.</h2>
+            <p class="section-lead reveal">Most MSP stacks bury per-device licenses, renewal fees, and subscription uplifts in your invoice. We standardized on UniFi — enterprise-grade networking with zero software license fees — so your money funds engineering, not vendors.</p>
+            <div class="compare">
+                <div class="compare-col dim reveal">
+                    <span class="tag">Typical MSP stack</span>
+                    <h3>License-heavy networking</h3>
+                    <div class="bar"><span class="bar-license"></span></div>
+                    <div class="bar-labels"><span>Vendor licenses &amp; renewals</span><span>~45%</span></div>
+                    <div class="bar"><span class="bar-eng"></span></div>
+                    <div class="bar-labels"><span>Actual engineering &amp; support</span><span>~55%</span></div>
+                    <p>Per-AP subscriptions, firewall renewals, cloud controller fees — stacked year after year, whether anything breaks or not.</p>
+                </div>
+                <div class="compare-col lit reveal">
+                    <span class="tag">BowdenCore UniFi-native</span>
+                    <h3>Engineering-funded networking</h3>
+                    <div class="bar"><span class="bar-eng-full"></span></div>
+                    <div class="bar-labels"><span>Engineering &amp; support</span><span>100%</span></div>
+                    <div class="bar"><span style="width:0%"></span></div>
+                    <div class="bar-labels"><span>Software license fees</span><span>$0</span></div>
+                    <p>UniFi carries no per-device licensing. Every dollar of your plan goes toward the engineers designing, monitoring, and maintaining your network.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
             <div class="container">
-                <p class="eyebrow reveal">Why BowdenCore</p>
-                <h2 class="reveal">Founder-led. Engineer-run.</h2>
-                <p class="section-lead reveal">BowdenCore was started by a senior network &amp; security engineer with five years running IT infrastructure — including healthcare environments where downtime isn't an option.</p>
+                <p class="eyebrow reveal">How we work</p>
+                <h2 class="reveal">Two stages. One standard:<br>your network, done right.</h2>
                 <div class="cards">
                     <div class="card reveal">
-                        <h3>Real operations background</h3>
-                        <p>Cisco, Fortinet, Palo Alto, and Ubiquiti networks; Azure AD and Microsoft 365; HIPAA-regulated environments. You've got the person who actually fixes things — not a sales rep.</p>
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>
+                        </div>
+                        <h3>Stage 1 — The UniFi Foundation</h3>
+                        <p>A pure UniFi stack — gateway, switching, Wi-Fi, and Protect cameras — cloud-managed by engineers. Zero license fees, rapid deployment, rock-solid VLAN segmentation.</p>
+                        <a href="services.html#stage-1" class="card-link">See the foundation &rarr;</a>
                     </div>
                     <div class="card reveal">
-                        <h3>Security-first by default</h3>
-                        <p>Every engagement starts from a hardened baseline: segmented networks, patched systems, and monitored endpoints. Security isn't an upsell here.</p>
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <h3>Stage 2 — Advanced Security &amp; Compliance</h3>
+                        <p>For HIPAA-regulated dental and medical practices: keep the UniFi access layer, upgrade the perimeter to Fortinet or Palo Alto NGFW with deep inspection and SOC monitoring.</p>
+                        <a href="services.html#stage-2" class="card-link">See the upgrade path &rarr;</a>
                     </div>
-                    <div class="card reveal">
-                        <h3>Built for small business</h3>
-                        <p>Enterprise-grade practices without enterprise-grade overhead. Straight pricing, plain-English reporting, and a direct line to your engineer.</p>
-                    </div>
-                </div>
-                <div class="creds reveal">
-                    <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>5 years</strong> running IT infrastructure &amp; network engineering</span></div>
-                    <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Senior Network &amp; Security Engineer</strong> at an Orlando MSP</span></div>
-                    <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>HIPAA-regulated healthcare</strong> environments — EHR systems, patient data</span></div>
-                    <div class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Cisco &middot; Fortinet &middot; Palo Alto &middot; Ubiquiti &middot; Azure AD &middot; Microsoft 365</span></div>
                 </div>
             </div>
         </section>
 
-        <section id="serve" class="section container">
-            <p class="eyebrow reveal">Who we serve</p>
-            <h2 class="reveal">Local IT for the offices<br>that can&apos;t afford downtime.</h2>
-            <p class="section-lead reveal">We focus on Central Florida&apos;s dental practices, medical offices, and small businesses &mdash; and we&apos;re close enough to show up in person when it matters.</p>
-            <div class="cards">
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
-                    </div>
-                    <h3>Dental &amp; medical offices</h3>
-                    <p>HIPAA-aware setups: secure patient systems, reliable imaging and scheduling software, encrypted backups, and audit-friendly configurations from day one.</p>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg>
-                    </div>
-                    <h3>Small businesses</h3>
-                    <p>10 to 200 employees: the same proactive monitoring and security the big firms get, at straightforward pricing a small business can actually budget for.</p>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                    </div>
-                    <h3>Service area</h3>
-                    <p class="areas">Lake Nona &middot; Medical City &middot; Winter Park &middot; Kissimmee &middot; Maitland &middot; Altamonte Springs &middot; Mount Dora &middot; Greater Orlando</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="process" class="section container">
-            <p class="eyebrow reveal">How it works</p>
-            <h2 class="reveal">From first call to fully<br>managed in four steps.</h2>
-            <div class="steps">
-                <div class="step reveal">
-                    <div class="step-num">1</div>
-                    <h3>Free assessment</h3>
-                    <p>A 30-minute look at your current setup: what's working, what's exposed, and what it would take to fix.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="step-num">2</div>
-                    <h3>Straightforward plan</h3>
-                    <p>You get a written plan with clear scope and pricing. No jargon, no surprise line items.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="step-num">3</div>
-                    <h3>Onboarding</h3>
-                    <p>We deploy monitoring, harden your systems, and document everything — with minimal disruption to your team.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="step-num">4</div>
-                    <h3>Ongoing management</h3>
-                    <p>Proactive maintenance, fast response when something breaks, and a regular report in plain English.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="audit" class="section section-alt">
-            <div class="container narrow">
-                <p class="eyebrow reveal">Paid assessment</p>
-                <h2 class="reveal">The $97 IT Health Check</h2>
+        <section class="section container">
+            <div class="container narrow" style="text-align:center">
+                <p class="eyebrow reveal">Start here</p>
+                <h2 class="reveal">The $97 Network Health Check</h2>
                 <p class="audit-price reveal"><span>$97</span> one-time</p>
-                <p class="section-lead reveal">A focused review of your network and security &mdash; on-site in Greater Orlando or remote. You get a written findings report with prioritized fixes. <strong>Credited in full toward your first month</strong> if you become a managed client.</p>
-                <div class="audit-list reveal">
-                    <div class="audit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Network &amp; firewall review &mdash; open ports, remote access, Wi-Fi security</span></div>
-                    <div class="audit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Endpoint security baseline &mdash; patching, antivirus, encryption status</span></div>
-                    <div class="audit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Backup &amp; recovery check &mdash; can you actually restore when it counts?</span></div>
-                    <div class="audit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Written findings report with a prioritized action plan</span></div>
-                </div>
+                <p class="section-lead reveal" style="margin-bottom:0">A focused review of your network — what's exposed, what's slow, what to fix first. Written findings, credited in full toward your first month as a client.</p>
                 <div class="center reveal">
-                    <a href="#contact" class="btn btn-primary btn-lg" id="audit-cta">Book the $97 audit</a>
-                    <p class="hero-note" id="audit-note">Secure checkout via Stripe.</p>
+                    <a href="contact.html?interest=audit" class="btn btn-primary btn-lg" data-audit-cta>Book the Health Check</a>
                 </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section section-alt">
-            <div class="container narrow">
-                <p class="eyebrow reveal">Get started</p>
-                <h2 class="reveal">Request your free assessment</h2>
-                <p class="section-lead reveal">Thirty minutes, no pitch. We'll look at your setup and tell you honestly where you stand.</p>
-                <form id="lead-form" class="lead-form reveal" novalidate>
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label for="f-name">Full name</label>
-                            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith">
-                        </div>
-                        <div class="form-field">
-                            <label for="f-email">Work email</label>
-                            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@company.com">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label for="f-company">Company</label>
-                            <input id="f-company" name="company" type="text" required autocomplete="organization" placeholder="Company, Inc.">
-                        </div>
-                        <div class="form-field">
-                            <label for="f-phone">Phone <span class="opt">(optional)</span></label>
-                            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(407) 555-0123">
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <label for="f-size">Company size</label>
-                        <select id="f-size" name="company_size">
-                            <option value="">Select…</option>
-                            <option>1–10 employees</option>
-                            <option>11–50 employees</option>
-                            <option>51–200 employees</option>
-                            <option>200+ employees</option>
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label for="f-msg">What's going on with your IT?</label>
-                        <textarea id="f-msg" name="message" rows="4" placeholder="Slow systems, security worries, upcoming project — tell us what's on your mind…"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="form-submit">Request free assessment</button>
-                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-                </form>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
-            <a href="#" class="logo">Bowden<span class="logo-accent">Core</span></a>
-            <p>&copy; 2026 BowdenCore &middot; Orlando, Florida &middot; <a href="mailto:info@bowdencore.com">info@bowdencore.com</a></p>
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="logo">Bowden<span class="logo-accent">Core</span></a>
+                <p>UniFi-native managed network services for Central Florida — engineered, not outsourced.</p>
+            </div>
+            <div>
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Proof</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#stage-1">UniFi Foundation</a></li>
+                    <li><a href="services.html#stage-2">Security &amp; Compliance</a></li>
+                    <li><a href="contact.html?interest=audit">$97 Health Check</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@bowdencore.com">info@bowdencore.com</a></li>
+                    <li><a href="contact.html">Request an assessment</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span data-year>2026</span> BowdenCore &middot; Orlando, Florida</p>
+            <p>Managed Network Services on the Ubiquiti UniFi stack</p>
         </div>
     </footer>
 
