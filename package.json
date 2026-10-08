@@ -1,7 +1,7 @@
 {
   "name": "bowdencore",
   "version": "1.0.0",
-  "description": "Enterprise MSP marketing website with Neuralink-inspired design",
+  "description": "Marketing website for BowdenCore \u2014 managed IT for Central Florida businesses (bowdencore.com)",
   "type": "module",
   "main": "index.html",
   "scripts": {
@@ -18,18 +18,17 @@
     "cybersecurity",
     "infrastructure",
     "landing-page",
-    "neuralink",
     "minimalist",
     "orlando"
   ],
-  "author": "BowdenCore Development Team",
+  "author": "Antonio Bowden",
   "license": "Proprietary",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/bowdencore.git"
+    "url": "https://github.com/abowden101/Bowdencore.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/bowdencore/issues"
+    "url": "https://github.com/abowden101/Bowdencore/issues"
   },
   "homepage": "https://bowdencore.com",
   "engines": {

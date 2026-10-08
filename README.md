@@ -32,3 +32,7 @@ python -m http.server 8000
 ## Deploy
 
 Push to `main` — GitHub Pages serves the site automatically.
+
+## Internal tool: Grok MCP assistant
+
+`mcp-assistant/` holds a separate local project — a FastAPI + Ollama assistant for ticket triage and MSP workflows. It is not part of the website. See `mcp-assistant/README.md` for setup.
