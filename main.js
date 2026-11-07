@@ -7,9 +7,11 @@
     var FALLBACK_EMAIL = "info@bowdencore.com";
 
     /* ---------- Paid audit checkout ----------
-       Paste a Stripe Payment Link for the $97 Health Check below.
-       Until then, audit buttons route to the contact form. */
-    var STRIPE_AUDIT_URL = "YOUR_STRIPE_PAYMENT_LINK";
+       Stripe Payment Link for the $97 Health Check (live, created Nov 6, 2026).
+       Audit buttons route here first (pay), then Stripe redirects buyers to the
+       Calendly booking call. If the link is ever deactivated, buttons fall back
+       to Calendly, then to the contact form. */
+    var STRIPE_AUDIT_URL = "https://buy.stripe.com/8x200ldwmcWb8qLgaR4ZG00";
 
     /* ---------- Health Check booking ----------
        Calendly 30-min booking call for the $97 Health Check.
@@ -61,12 +63,12 @@
 
     /* ---------- Audit CTA buttons (any page) ---------- */
     document.querySelectorAll("[data-audit-cta]").forEach(function (btn) {
-        if (CALENDLY_AUDIT_URL !== "https://calendly.com/abowden697/network-health-check-bowdencore") {
-            btn.setAttribute("href", CALENDLY_AUDIT_URL);
+        if (STRIPE_AUDIT_URL !== "YOUR_STRIPE_PAYMENT_LINK") {
+            btn.setAttribute("href", STRIPE_AUDIT_URL);
             btn.setAttribute("target", "_blank");
             btn.setAttribute("rel", "noopener");
-        } else if (STRIPE_AUDIT_URL !== "YOUR_STRIPE_PAYMENT_LINK") {
-            btn.setAttribute("href", STRIPE_AUDIT_URL);
+        } else if (CALENDLY_AUDIT_URL !== "https://calendly.com/abowden697/network-health-check-bowdencore") {
+            btn.setAttribute("href", CALENDLY_AUDIT_URL);
             btn.setAttribute("target", "_blank");
             btn.setAttribute("rel", "noopener");
         }
@@ -75,7 +77,7 @@
 
     /* ---------- Calendly booking links (contact page card) ---------- */
     document.querySelectorAll("[data-calendly-booking]").forEach(function (a) {
-        if (CALENDLY_AUDIT_URL !== "https://calendly.com/abowden697/network-health-check-bowdencore") {
+        if (CALENDLY_AUDIT_URL.indexOf("https://") === 0) {
             a.setAttribute("href", CALENDLY_AUDIT_URL);
             a.setAttribute("target", "_blank");
             a.setAttribute("rel", "noopener");
