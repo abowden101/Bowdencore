@@ -1,4 +1,4 @@
-// BowdenCore — bowdencore.com · shared site JS
+// BowdenCore v3 — bowdencore.com · shared site JS
 (function () {
     "use strict";
 
@@ -6,27 +6,24 @@
     var FORMSPREE_ID = "xqpeqgew";
     var FALLBACK_EMAIL = "info@bowdencore.com";
 
-    /* ---------- Paid audit checkout ----------
-       Stripe Payment Link for the $97 Health Check (live, created Nov 6, 2026).
-       Audit buttons route here first (pay), then Stripe redirects buyers to the
-       Calendly booking call. If the link is ever deactivated, buttons fall back
-       to Calendly, then to the contact form. */
+    /* ---------- Paid Health Check checkout ----------
+       Live Stripe Payment Link ($97 one-time). After payment Stripe
+       redirects buyers to the Calendly booking call. */
     var STRIPE_AUDIT_URL = "https://buy.stripe.com/8x200ldwmcWb8qLgaR4ZG00";
 
     /* ---------- Health Check booking ----------
-       Calendly 30-min booking call for the $97 Health Check.
-       Set by Muse Nov 6, 2026 — replaced with the live link once created. */
+       Calendly 30-min booking call for the $97 Health Check. */
     var CALENDLY_AUDIT_URL = "https://calendly.com/abowden697/network-health-check-bowdencore";
 
     /* ---------- Header state ---------- */
     var header = document.querySelector(".site-header");
-    function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
+    function onScroll() { if (header) header.classList.toggle("scrolled", window.scrollY > 10); }
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
     /* ---------- Mobile nav ---------- */
     var toggle = document.querySelector(".nav-toggle");
-    if (toggle) {
+    if (toggle && header) {
         toggle.addEventListener("click", function () {
             var open = header.classList.toggle("nav-open");
             toggle.setAttribute("aria-expanded", open ? "true" : "false");
@@ -56,18 +53,53 @@
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
+    /* ---------- Count-up metrics ---------- */
+    var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            var el = e.target;
+            cio.unobserve(el);
+            var target = parseFloat(el.getAttribute("data-count") || "0");
+            var suffix = el.getAttribute("data-suffix") || "";
+            var prefix = el.getAttribute("data-prefix") || "";
+            var dur = 1200, start = null;
+            function tick(ts) {
+                if (!start) start = ts;
+                var p = Math.min((ts - start) / dur, 1);
+                var eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = prefix + Math.round(target * eased) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll("[data-count]").forEach(function (el) { cio.observe(el); });
+
+    /* ---------- FAQ accordion ---------- */
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+        var q = item.querySelector(".faq-q");
+        var a = item.querySelector(".faq-a");
+        if (!q || !a) return;
+        q.addEventListener("click", function () {
+            var open = item.classList.toggle("open");
+            q.setAttribute("aria-expanded", open ? "true" : "false");
+            a.style.maxHeight = open ? a.scrollHeight + "px" : "0px";
+        });
+    });
+
     /* ---------- Footer year ---------- */
     document.querySelectorAll("[data-year]").forEach(function (el) {
         el.textContent = new Date().getFullYear();
     });
 
-    /* ---------- Audit CTA buttons (any page) ---------- */
+    /* ---------- Audit CTA buttons (any page) ----------
+       Pay first via Stripe; fall back to Calendly, then the contact form. */
     document.querySelectorAll("[data-audit-cta]").forEach(function (btn) {
-        if (STRIPE_AUDIT_URL !== "YOUR_STRIPE_PAYMENT_LINK") {
+        if (STRIPE_AUDIT_URL) {
             btn.setAttribute("href", STRIPE_AUDIT_URL);
             btn.setAttribute("target", "_blank");
             btn.setAttribute("rel", "noopener");
-        } else if (CALENDLY_AUDIT_URL !== "https://calendly.com/abowden697/network-health-check-bowdencore") {
+        } else if (CALENDLY_AUDIT_URL) {
             btn.setAttribute("href", CALENDLY_AUDIT_URL);
             btn.setAttribute("target", "_blank");
             btn.setAttribute("rel", "noopener");
@@ -75,7 +107,7 @@
         // else: default href points at contact.html (set in markup)
     });
 
-    /* ---------- Calendly booking links (contact page card) ---------- */
+    /* ---------- Calendly booking links (contact page) ---------- */
     document.querySelectorAll("[data-calendly-booking]").forEach(function (a) {
         if (CALENDLY_AUDIT_URL.indexOf("https://") === 0) {
             a.setAttribute("href", CALENDLY_AUDIT_URL);
@@ -119,38 +151,23 @@
         data.site = "bowdencore.com";
         data._subject = "New BowdenCore lead \u2014 " + data.company;
 
-        if (FORMSPREE_ID === "xqpeqgew") {
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Sending\u2026";
-            fetch("https://formspree.io/f/" + FORMSPREE_ID, {
-                method: "POST",
-                headers: { "Content-Type": "application/json", "Accept": "application/json" },
-                body: JSON.stringify(data)
-            }).then(function (res) {
-                if (!res.ok) throw new Error("send failed");
-                status.textContent = "Thanks \u2014 your request is in. We\u2019ll be in touch within one business day.";
-                status.className = "form-status ok";
-                form.reset();
-            }).catch(function () {
-                status.textContent = "Something went wrong sending that. Please email us directly at " + FALLBACK_EMAIL + ".";
-                status.className = "form-status error";
-            }).then(function () {
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Request the $97 Health Check";
-            });
-            return;
-        }
-
-        // Fallback: open email client with details prefilled
-        var subject = encodeURIComponent("Website inquiry \u2014 " + company);
-        var body = encodeURIComponent(
-            "Name: " + data.name + "\nEmail: " + data.email + "\nCompany: " + data.company +
-            "\nPhone: " + (data.phone || "\u2014") +
-            "\nCompany size: " + (data.company_size || "\u2014") +
-            "\n\n" + (data.message || "")
-        );
-        window.location.href = "mailto:" + FALLBACK_EMAIL + "?subject=" + subject + "&body=" + body;
-        status.textContent = "Opening your email client to send the request\u2026";
-        status.className = "form-status ok";
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending\u2026";
+        fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(data)
+        }).then(function (res) {
+            if (!res.ok) throw new Error("send failed");
+            status.textContent = "Thanks \u2014 your request is in. We\u2019ll be in touch within one business day.";
+            status.className = "form-status ok";
+            form.reset();
+        }).catch(function () {
+            status.textContent = "Something went wrong sending that. Please email us directly at " + FALLBACK_EMAIL + ".";
+            status.className = "form-status error";
+        }).then(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Request the $97 Health Check";
+        });
     });
 })();
