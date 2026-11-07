@@ -11,6 +11,11 @@
        Until then, audit buttons route to the contact form. */
     var STRIPE_AUDIT_URL = "YOUR_STRIPE_PAYMENT_LINK";
 
+    /* ---------- Health Check booking ----------
+       Calendly 30-min booking call for the $97 Health Check.
+       Set by Muse Nov 6, 2026 — replaced with the live link once created. */
+    var CALENDLY_AUDIT_URL = "https://calendly.com/abowden697/network-health-check-bowdencore";
+
     /* ---------- Header state ---------- */
     var header = document.querySelector(".site-header");
     function onScroll() { header.classList.toggle("scrolled", window.scrollY > 10); }
@@ -56,12 +61,25 @@
 
     /* ---------- Audit CTA buttons (any page) ---------- */
     document.querySelectorAll("[data-audit-cta]").forEach(function (btn) {
-        if (STRIPE_AUDIT_URL !== "YOUR_STRIPE_PAYMENT_LINK") {
+        if (CALENDLY_AUDIT_URL !== "https://calendly.com/abowden697/network-health-check-bowdencore") {
+            btn.setAttribute("href", CALENDLY_AUDIT_URL);
+            btn.setAttribute("target", "_blank");
+            btn.setAttribute("rel", "noopener");
+        } else if (STRIPE_AUDIT_URL !== "YOUR_STRIPE_PAYMENT_LINK") {
             btn.setAttribute("href", STRIPE_AUDIT_URL);
             btn.setAttribute("target", "_blank");
             btn.setAttribute("rel", "noopener");
         }
         // else: default href points at contact.html (set in markup)
+    });
+
+    /* ---------- Calendly booking links (contact page card) ---------- */
+    document.querySelectorAll("[data-calendly-booking]").forEach(function (a) {
+        if (CALENDLY_AUDIT_URL !== "https://calendly.com/abowden697/network-health-check-bowdencore") {
+            a.setAttribute("href", CALENDLY_AUDIT_URL);
+            a.setAttribute("target", "_blank");
+            a.setAttribute("rel", "noopener");
+        }
     });
 
     /* ---------- Lead form (contact page) ---------- */
@@ -116,7 +134,7 @@
                 status.className = "form-status error";
             }).then(function () {
                 submitBtn.disabled = false;
-                submitBtn.textContent = "Request free assessment";
+                submitBtn.textContent = "Request the $97 Health Check";
             });
             return;
         }

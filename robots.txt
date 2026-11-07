@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bowdencore.com/sitemap.xml
