@@ -53,7 +53,10 @@
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
-    /* ---------- Count-up metrics ---------- */
+    /* ---------- Count-up metrics ----------
+       Final values live in the HTML, so the numbers are correct even
+       with JS disabled or before the section scrolls into view.
+       JS only animates from 0 once the element is actually visible. */
     var cio = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
             if (!e.isIntersecting) return;
@@ -63,6 +66,7 @@
             var suffix = el.getAttribute("data-suffix") || "";
             var prefix = el.getAttribute("data-prefix") || "";
             var dur = 1200, start = null;
+            el.textContent = prefix + "0" + suffix;
             function tick(ts) {
                 if (!start) start = ts;
                 var p = Math.min((ts - start) / dur, 1);
